@@ -4,7 +4,9 @@ To execute it with limo, get it on github: [limo](https://github.com/mokrates/li
 
 # wtf?
 
-People were wrong on the [facebook](https://www.facebook.com/groups/journalofscientificshitposting/posts/3562273530653324?comment_id=3562857307261613&reply_comment_id=3565074887039855)
+People were wrong on the [facebook](https://www.facebook.com/groups/journalofscientificshitposting/posts/3562273530653324?comment_id=3562857307261613&reply_comment_id=3565074887039855), so duty called.
+
+![dutycalls](https://imgs.xkcd.com/comics/duty_calls_2x.png "Duty calls")
 
 # plotting the german
 
