@@ -12,7 +12,6 @@ People were wrong on the [facebook](https://www.facebook.com/groups/journalofsci
 
 ```bash
 limo numberwords-distrib-deutsch.limo > gscatter.dat
-gnuplot
 echo "set ylabel 'alphabetical position'; plot 'gscatter.dat' using 2:3 pt 7 notitle;" | gnuplot -persist
 	
 # or, with labels
