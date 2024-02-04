@@ -10,18 +10,29 @@ People were wrong on the [facebook](https://www.facebook.com/groups/journalofsci
 
 # plotting the german
 
-	$ limo numberwords-distrib-deutsch.limo > gscatter.dat
-	$ gnuplot
-	set ylabel "alphabetical position"
-	plot 'gscatter.dat' with points pt 7
+```bash
+limo numberwords-distrib-deutsch.limo > gscatter.dat
+gnuplot
+echo "set ylabel 'alphabetical position'; plot 'gscatter.dat' using 2:3 pt 7 notitle;" | gnuplot -persist
+	
+# or, with labels
+echo "set ylabel 'alphabetical position'; plot 'gscatter.dat' using 2:3 pt 7 notitle, '' using 2:3:1 with labels offset 0.5,0.5 notitle;" | gnuplot -persist
+```
 
 ![Plotforgerman](german.png "plot for german")
+![Plotforgermanwlabels](german-labels.png "plot for german with labels")
 
 # plotting the english
 
-	$ limo numberwords-distrib-english.limo > escatter.dat
-	$ gnuplot
-	set ylabel "alphabetical position"
-	plot 'escatter.dat' with points pt 7
+```bash
+limo numberwords-distrib-'english.limo > escatter.dat
+gnuplot
+echo "set ylabel 'alphabetical position'; plot 'escatter.dat' using 2:3 pt 7 notitle;" | gnuplot -persist
+	
+# or, with labels
+echo "set ylabel 'alphabetical position'; plot 'escatter.dat' using 2:3 pt 7 notitle, '' using 2:3:1 with labels offset 0.5,0.5 notitle;" | gnuplot -persist
+```
 
 ![Plotforenglish](english.png "plot for english")
+![Plotforenglishwlabels](english-labels.png "plot for english with labels")
+

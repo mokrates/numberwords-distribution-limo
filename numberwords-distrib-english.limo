@@ -45,4 +45,4 @@
 (setq sorted (sort (lambda (x y) (string< (cdr x) (cdr y))) numbers-and-names))
 
 (for-each n (enumerate sorted)
-  (print (format "%n %n\n" (cadr n) (car n))))
+  (print (format "%s %n %n\n" (cddr n) (cadr n) (car n))))
