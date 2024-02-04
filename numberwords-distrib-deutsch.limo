@@ -1,0 +1,50 @@
+;; deutsch
+
+(import "enumerate.limo")
+
+(setq smalls '((0 . "null")
+	       (1 . "eins")
+	       (2 . "zwei")
+	       (3 . "drei")
+	       (4 . "vier")
+	       (5 . "fuenf")
+	       (6 . "sechs")
+	       (7 . "sieben")
+	       (8 . "acht")
+	       (9 . "neun")
+	       (10 . "zehn")
+	       (11 . "elf")
+	       (12 . "zwoelf")
+	       (13 . "dreizehn")
+	       (14 . "vierzehn")
+	       (15 . "fuenfzehn")
+	       (16 . "sechzehn")
+	       (17 . "siebzehn")
+	       (18 . "achtzehn")
+	       (19 . "neunzehn")))
+
+(setq zigs '((2 . "zwanzig")
+	     (3 . "dreissig")
+	     (4 . "vierzig")
+	     (5 . "fuenfzig")
+	     (6 . "sechzig")
+	     (7 . "siebzig")
+	     (8 . "achtzig")
+	     (9 . "neunzig")))
+
+(setq numbers-and-names
+      (map (lambda (n)
+	     (cond ((assoc n smalls)
+		    (cons n (cdr (assoc n smalls))))
+		   ((= (mod n 10) 0)
+		    (cons n (cdr (assoc (/ n 10) zigs))))
+		   ((= (mod n 10) 1)
+		    (cons n (format "einund%s" (cdr (assoc (floor (/ n 10)) zigs)))))
+		   (:else
+		    (cons n (format "%sund%s" (cdr (assoc (mod n 10) smalls)) (cdr (assoc (floor (/ n 10)) zigs)))))))
+	   (mdrange 100)))
+
+(setq sorted (sort (lambda (x y) (string< (cdr x) (cdr y))) numbers-and-names))
+
+(for-each n (enumerate sorted)
+  (print (format "%n %n\n" (cadr n) (car n))))
