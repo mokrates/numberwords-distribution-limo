@@ -25,10 +25,9 @@ echo "set ylabel 'alphabetical position'; plot 'gscatter.dat' using 2:3 pt 7 not
 # plotting the english
 
 ```bash
-limo numberwords-distrib-'english.limo > escatter.dat
-gnuplot
+limo numberwords-distrib-english.limo > escatter.dat
 echo "set ylabel 'alphabetical position'; plot 'escatter.dat' using 2:3 pt 7 notitle;" | gnuplot -persist
-	
+
 # or, with labels
 echo "set ylabel 'alphabetical position'; plot 'escatter.dat' using 2:3 pt 7 notitle, '' using 2:3:1 with labels offset 0.5,0.5 notitle;" | gnuplot -persist
 ```
